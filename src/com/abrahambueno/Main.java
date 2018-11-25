@@ -4,16 +4,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	// width of 16 bits (2 bytes)
-    	char myChar = '\u00A9';
-		System.out.println(myChar);
+    	String myString = "This is a string";
+    	System.out.println("myString is equal to " + myString);
+    	myString = myString + ", and this is more.";
+    	System.out.println(myString);
+    	myString = myString + " \u00A9 2015";
+    	System.out.println("myString is equal to " + myString);
 
-		boolean myBoolean = true;
-		boolean isMale = true;
+    	String numberString = "250.55";
+    	numberString = numberString + "49.95";
+    	System.out.println(numberString);
 
-		char myReg = '\u00AE';
+    	String lastString = "10";
+    	int myInt = 50;
+    	lastString = lastString + myInt;
+    	System.out.println("lastString is equal to " + lastString);
 
-		System.out.println("Registered symbol = " + myReg);
-
+    	double doubleNumber = 120.47;
+    	lastString = lastString + doubleNumber;
+    	System.out.println("lastString value: " + lastString);
     }
 }
