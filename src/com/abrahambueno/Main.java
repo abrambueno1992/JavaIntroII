@@ -15,5 +15,10 @@ public class Main {
     	System.out.println("myFloatValue = " + myFloatValue);
     	System.out.println("myDoubleValue = " + myDoubleValue);
 
+    	double wLb = 3;
+    	double wKg = 3 * 0.45359237;
+    	System.out.println(wKg);
+
+
     }
 }
