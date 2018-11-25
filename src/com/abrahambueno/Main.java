@@ -3,10 +3,12 @@ package com.abrahambueno;
 public class Main {
 
     public static void main(String[] args) {
-    	byte varByte = 127;
-    	short varShort =  32767;
-    	int varInt = 2140000000;
-    	long varLong = (5000 + 10) * varByte + varShort + varInt;
+    	int myIntValue = 5;
+    	float myFloatValue = 5f;
+    	double myDoubleValue = 5d;
+    	System.out.println("myIntValue = " + myIntValue);
+    	System.out.println("myFloatValue = " + myFloatValue);
+    	System.out.println("myDoubleValue = " + myDoubleValue);
 
     }
 }
