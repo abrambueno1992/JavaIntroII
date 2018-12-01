@@ -3,25 +3,45 @@ package com.abrahambueno;
 public class Main {
 
     public static void main(String[] args) {
+    	int result = 1 + 2;
+    	System.out.println("1 + 2 = " + result);
 
-    	String myString = "This is a string";
-    	System.out.println("myString is equal to " + myString);
-    	myString = myString + ", and this is more.";
-    	System.out.println(myString);
-    	myString = myString + " \u00A9 2015";
-    	System.out.println("myString is equal to " + myString);
+		int previousResult = result;
 
-    	String numberString = "250.55";
-    	numberString = numberString + "49.95";
-    	System.out.println(numberString);
+		result = result - 1;
+		System.out.println("Previous result = " + previousResult);
+		System.out.println("New result = 3 - 1 =" + result);
 
-    	String lastString = "10";
-    	int myInt = 50;
-    	lastString = lastString + myInt;
-    	System.out.println("lastString is equal to " + lastString);
+		previousResult = result;
 
-    	double doubleNumber = 120.47;
-    	lastString = lastString + doubleNumber;
-    	System.out.println("lastString value: " + lastString);
+		result = previousResult * 10;
+		System.out.println(previousResult + " * 10 =" + result);
+
+		previousResult = result;
+
+		result = result / 5;
+		System.out.println(previousResult + " / 5 =" + result);
+
+		previousResult = result;
+
+		result = result % 3;
+		System.out.println(previousResult + " % 3 =" + result);
+
+		previousResult = result;
+
+		result = result + 1;
+		System.out.println("Result is now " + result);
+
+		boolean isAlien = false;
+		if (isAlien == false)
+			System.out.println("It is not an alien");
+
+		int topScore = 92;
+		if (topScore < 100)
+			System.out.println("You got the high score!");
+
+		int secondTopScore = 60;
+		if (topScore > secondTopScore && topScore < 100)
+			System.out.println("Greater than second top score and less then 100");
     }
 }
