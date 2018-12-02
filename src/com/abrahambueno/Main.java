@@ -49,9 +49,9 @@ public class Main {
     public  static  int calculateHighScorePosition(int score) {
         if (score >= 1000) {
             return 1;
-        } else if (500 <= score &&  score <= 1000) {
+        } else if (500 <= score) {
             return 2;
-        } else if (100 <= score && score <= 500) {
+        } else if (100 <= score) {
             return 3;
         } else {
             return 4;
