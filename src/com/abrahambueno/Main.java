@@ -3,68 +3,29 @@ package com.abrahambueno;
 public class Main {
 
     public static void main(String[] args) {
-    	int result = 1 + 2;
-    	System.out.println("1 + 2 = " + result);
+        boolean gameOver = true;
+        int score = 5000;
+        int levelCompleted = 5;
+        int bonus = 100;
+        if (score <= 5000 && score > 1000) {
+            System.out.println("Your score was less than or equal to 5000 to a score greater than 1000");
 
-		int previousResult = result;
+        } else if (score < 1000) {
+            System.out.println("Less than 1000");
+        } else {
+            System.out.println("Greater than 5000");
+        }
 
-		result = result - 1;
-		System.out.println("Previous result = " + previousResult);
-		System.out.println("New result = 3 - 1 =" + result);
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            System.out.println("Your final score was " + finalScore);
+        }
 
-		previousResult = result;
+        score = 10000;
+        levelCompleted = 8;
+        bonus = 200;
+        int finalScore = score + (levelCompleted * bonus);
+        System.out.println("Your final score was " + finalScore);
 
-		result = previousResult * 10;
-		System.out.println(previousResult + " * 10 =" + result);
-
-		previousResult = result;
-
-		result = result / 5;
-		System.out.println(previousResult + " / 5 =" + result);
-
-		previousResult = result;
-
-		result = result % 3;
-		System.out.println(previousResult + " % 3 =" + result);
-
-		previousResult = result;
-
-		result = result + 1;
-		System.out.println("Result is now " + result);
-
-		boolean isAlien = false;
-		if (isAlien == false)
-			System.out.println("It is not an alien");
-
-		int topScore = 92;
-		if (topScore < 100)
-			System.out.println("You got the high score!");
-
-		int secondTopScore = 60;
-		if ((topScore > secondTopScore) && (topScore < 100))
-			System.out.println("Greater than second top score and less then 100");
-
-		if ((topScore > 90) || (secondTopScore <= 90))
-			System.out.println("One of these tests is true");
-
-		int newValue = 50;
-		if (newValue == 50)
-			System.out.println("This is true");
-
-		boolean isChar = false;
-		if (isChar == true)
-			System.out.println("This is not supposed to happen");
-
-		isChar = true;
-		boolean wasChar = isChar ? true : false;
-		if (wasChar)
-			System.out.println("wasChar is true");
-
-		double doubleVar = 20;
-		double secondDouble = 80;
-		double productDoubles = (double) (doubleVar + secondDouble) * 25;
-		double doubleRemainder = (double) (productDoubles % 40);
-		if (doubleRemainder <= 20)
-			System.out.println("Total was over the limit");
     }
 }
