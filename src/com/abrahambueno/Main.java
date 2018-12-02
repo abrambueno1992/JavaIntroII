@@ -4,49 +4,58 @@ public class Main {
 
     public static void main(String[] args) {
         boolean gameOver = true;
-        int score = 5000;
+        int score = 800;
         int levelCompleted = 5;
         int bonus = 100;
-        if (score <= 5000 && score > 1000) {
-            System.out.println("Your score was less than or equal to 5000 to a score greater than 1000");
 
-        } else if (score < 1000) {
-            System.out.println("Less than 1000");
-        } else {
-            System.out.println("Greater than 5000");
-        }
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
 
-//        if (gameOver) {
-//            int finalScore = score + (levelCompleted * bonus);
-//            System.out.println("Your final score was " + finalScore);
-//        }
+        score = 10000;
+        levelCompleted = 8;
+        bonus = 200;
+        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
 
-//        score = 10000;
-//        levelCompleted = 8;
-//        bonus = 200;
-//        int finalScore = score + (levelCompleted * bonus);
-//        System.out.println("Your final score was " + finalScore);
+        displayHighScorePosition("Abraham", 30);
+        int calculatedResult = calculateHighScorePosition(1500);
+        System.out.println("Result is = " + calculatedResult);
 
+        calculatedResult = calculateHighScorePosition(900);
+        System.out.println("Result is = " + calculatedResult);
+
+        calculatedResult = calculateHighScorePosition(400);
+        System.out.println("Result is = " + calculatedResult);
+
+        calculatedResult = calculateHighScorePosition(50);
+        System.out.println("Result is = " + calculatedResult);
     }
 
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
-//        boolean gameOver = true;
-//        int score = 5000;
-//        int levelCompleted = 5;
-//        int bonus = 100;
-        if (score <= 5000 && score > 1000) {
-            System.out.println("Your score was less than or equal to 5000 to a score greater than 1000");
-
-        } else if (score < 1000) {
-            System.out.println("Less than 1000");
-        } else {
-            System.out.println("Greater than 5000");
-        }
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 
         if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
+            finalScore += 2000;
+            return  finalScore;
+        } else {
+            return -1;
         }
     }
+
+    public  static void displayHighScorePosition(String name, int position) {
+        System.out.println(name + " managed to get into position " + position + " on the high score table");
+    }
+
+    public  static  int calculateHighScorePosition(int score) {
+        if (score > 1000) {
+            return 1;
+        } else if (500 < score &&  score< 1000) {
+            return 2;
+        } else if (100 < score && score < 500) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
+
 }
