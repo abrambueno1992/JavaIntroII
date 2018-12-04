@@ -1,61 +1,34 @@
 package com.abrahambueno;
 
 public class Main {
-
-    public static void main(String[] args) {
-        boolean gameOver = true;
-        int score = 800;
-        int levelCompleted = 5;
-        int bonus = 100;
-
-        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-        System.out.println("Your final score was " + highScore);
-
-        score = 10000;
-        levelCompleted = 8;
-        bonus = 200;
-        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-        System.out.println("Your final score was " + highScore);
-
-        displayHighScorePosition("Abraham", 30);
-        int calculatedResult = calculateHighScorePosition(1500);
-        System.out.println("Result is = " + calculatedResult);
-
-        calculatedResult = calculateHighScorePosition(900);
-        System.out.println("Result is = " + calculatedResult);
-
-        calculatedResult = calculateHighScorePosition(400);
-        System.out.println("Result is = " + calculatedResult);
-
-        calculatedResult = calculateHighScorePosition(50);
-        System.out.println("Result is = " + calculatedResult);
-    }
-
-    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
-
-        if (gameOver) {
-            int finalScore = score + (levelCompleted * bonus);
-            finalScore += 2000;
-            return  finalScore;
-        } else {
+    public static double calcFeetAndInchesToCentimeters(int feet, int inches) {
+        if (feet <= 0 && inches <= 0) {
             return -1;
         }
-    }
-
-    public  static void displayHighScorePosition(String name, int position) {
-        System.out.println(name + " managed to get into position " + position + " on the high score table");
-    }
-
-    public  static  int calculateHighScorePosition(int score) {
-        if (score >= 1000) {
-            return 1;
-        } else if (500 <= score) {
-            return 2;
-        } else if (100 <= score) {
-            return 3;
-        } else {
-            return 4;
+        if (inches <= 0 && feet <= 0 || inches >= 12) {
+            return -1;
         }
+        double totalInches = (feet * 12) + inches;
+        double totalCentimeters = totalInches * 2.54;
+        return  totalCentimeters;
+    }
+
+    public static double calcFeetAndInchesToCentimeters(int inches) {
+        if (inches <= 0 || inches >= 12) {
+            return -1;
+        }
+        int remainingInches = inches % 12;
+        int feet = inches / 12;
+        System.out.println("remaining inch, feet" + remainingInches + " " +feet);
+        double centimeters = calcFeetAndInchesToCentimeters(feet, remainingInches);
+        return  centimeters;
+//        System.out.println("centimeters" + centimeters);
+    }
+    public static void main(String[] args) {
+        double result = calcFeetAndInchesToCentimeters(10);
+        System.out.println(result);
+        result = calcFeetAndInchesToCentimeters(3, 10);
+        System.out.println(result);
     }
 
 }
