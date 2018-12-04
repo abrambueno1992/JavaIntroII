@@ -1,34 +1,32 @@
 package com.abrahambueno;
 
 public class Main {
-    public static double calcFeetAndInchesToCentimeters(int feet, int inches) {
-        if (feet <= 0 && inches <= 0) {
-            return -1;
+
+    public static String getDurationString(int minutes, int seconds) {
+        if (minutes <= 0 || seconds >= 60) {
+            return "Invalid value";
         }
-        if (inches <= 0 && feet <= 0 || inches >= 12) {
-            return -1;
+        int hours = minutes / 60;
+        int remainingMinutes = minutes % 60;
+        String result = hours + "h " + remainingMinutes + "m " + seconds + "s ";
+        return result;
+    }
+    public static String getDurationString(int seconds) {
+        if (seconds <= 0) {
+            return "Invalid value";
         }
-        double totalInches = (feet * 12) + inches;
-        double totalCentimeters = totalInches * 2.54;
-        return  totalCentimeters;
+        int minutes = seconds / 60;
+        int remainingSeconds = seconds % 60;
+        return getDurationString(minutes,remainingSeconds);
+//        String result = hours + "h " + remainingMinutes + "m " + seconds + "s ";
+//        return result;
     }
 
-    public static double calcFeetAndInchesToCentimeters(int inches) {
-        if (inches <= 0) {
-            return -1;
-        }
-        int remainingInches = inches % 12;
-        int feet = inches / 12;
-        System.out.println("remaining inch, feet" + remainingInches + " " +feet);
-        double centimeters = calcFeetAndInchesToCentimeters(feet, remainingInches);
-        return  centimeters;
-//        System.out.println("centimeters" + centimeters);
-    }
     public static void main(String[] args) {
-        double result = calcFeetAndInchesToCentimeters(30);
-        System.out.println(result);
-        result = calcFeetAndInchesToCentimeters(3, 10);
-        System.out.println(result);
+        String resOne = getDurationString(65, 10);
+        System.out.println(resOne);
+        resOne = getDurationString(65);
+        System.out.println(resOne);
     }
 
 }
