@@ -1,79 +1,34 @@
 package com.abrahambueno;
 
 public class Main {
-    public static void printMegaBytesAndKiloBytes(int kiloBytes) {
-        if (kiloBytes < 0) {
-            System.out.println("Invalid Value");
-            return;
+    public static double calcFeetAndInchesToCentimeters(int feet, int inches) {
+        if (feet <= 0 && inches <= 0) {
+            return -1;
         }
-        int XX = kiloBytes;
-        int YY = (int) XX / 1024;
-        int ZZ = (int) XX % 1024;
-        System.out.println(XX + " KB = " + YY + " MB " + "and " + ZZ + " KB");
-    }
-    public static boolean bark(boolean barking, int hourOfDay) {
-        if (hourOfDay < 0 || hourOfDay > 23) {
-            return false;
+        if (inches <= 0 && feet <= 0 || inches >= 12) {
+            return -1;
         }
-        if (hourOfDay < 8 && barking || hourOfDay > 22 && barking) {
-            return true;
-        } else {
-            return false;
-        }
+        double totalInches = (feet * 12) + inches;
+        double totalCentimeters = totalInches * 2.54;
+        return  totalCentimeters;
     }
 
-    public static boolean isLeapYear(int year) {
-        if (year < 1 || year > 9999) {
-            return false;
+    public static double calcFeetAndInchesToCentimeters(int inches) {
+        if (inches <= 0) {
+            return -1;
         }
-        if (year % 4 == 0 && year % 100 != 0) {
-            return true;
-        } else if (year % 400 == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public static boolean areEqualByThreeDecimalPlaces(double first, double second) {
-        double difference = (double) (first - second);
-        if (-0.0009 < difference && difference < 0.0009) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public static boolean hasEqualSum(int one, int two, int three) {
-        if (one + two == three) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean hasTeen(int one, int two, int three) {
-        boolean first = false;
-        boolean second = false;
-        boolean third = false;
-        if (13 <= one && one <= 19) {
-            first = true;
-            return first;
-        };
-        if (13 <= two && two <= 19) {
-            second = true;
-            return second;
-        }
-        if (13 <= three && three <= 19) {
-            third = true;
-            return third;
-        };
-        return false;
-
+        int remainingInches = inches % 12;
+        int feet = inches / 12;
+        System.out.println("remaining inch, feet" + remainingInches + " " +feet);
+        double centimeters = calcFeetAndInchesToCentimeters(feet, remainingInches);
+        return  centimeters;
+//        System.out.println("centimeters" + centimeters);
     }
     public static void main(String[] args) {
-
+        double result = calcFeetAndInchesToCentimeters(30);
+        System.out.println(result);
+        result = calcFeetAndInchesToCentimeters(3, 10);
+        System.out.println(result);
     }
 
 }
