@@ -35,6 +35,16 @@ public class Main {
             return false;
         }
     }
+
+    public static boolean areEqualByThreeDecimalPlaces(double first, double second) {
+        double difference = (double) (first - second);
+        if (-0.0009 < difference && difference < 0.0009) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     public static void main(String[] args) {
 
     }
