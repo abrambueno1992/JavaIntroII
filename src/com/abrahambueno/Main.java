@@ -45,6 +45,13 @@ public class Main {
             return false;
         }
     }
+
+    public static boolean hasEqualSum(int one, int two, int three) {
+        if (one + two == three) {
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
 
     }
