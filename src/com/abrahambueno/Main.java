@@ -52,6 +52,26 @@ public class Main {
         }
         return false;
     }
+
+    public static boolean hasTeen(int one, int two, int three) {
+        boolean first = false;
+        boolean second = false;
+        boolean third = false;
+        if (13 <= one && one <= 19) {
+            first = true;
+            return first;
+        };
+        if (13 <= two && two <= 19) {
+            second = true;
+            return second;
+        }
+        if (13 <= three && three <= 19) {
+            third = true;
+            return third;
+        };
+        return false;
+
+    }
     public static void main(String[] args) {
 
     }
