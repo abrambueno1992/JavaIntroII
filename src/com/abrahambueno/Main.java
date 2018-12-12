@@ -2,24 +2,15 @@ package com.abrahambueno;
 
 public class Main {
 
-    public static String getDurationString(int minutes, int seconds) {
-        if (minutes <= 0 || seconds >= 60) {
-            return "Invalid value";
-        }
-        int hours = minutes / 60;
-        int remainingMinutes = minutes % 60;
-        String result = hours + "h " + remainingMinutes + "m " + seconds + "s ";
-        return result;
+    public static double area(double radius) {
+        if (0 > radius) return -1.0;
+        return 3.14159 * radius * radius;
     }
-    public static String getDurationString(int seconds) {
-        if (seconds <= 0) {
-            return "Invalid value";
-        }
-        int minutes = seconds / 60;
-        int remainingSeconds = seconds % 60;
-        return getDurationString(minutes,remainingSeconds);
-//        String result = hours + "h " + remainingMinutes + "m " + seconds + "s ";
-//        return result;
+
+    public static double area(double x, double y) {
+        if (0 > x || 0 > y) return -1.0;
+
+        return x * y;
     }
 
     public static void main(String[] args) {
