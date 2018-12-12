@@ -2,17 +2,20 @@ package com.abrahambueno;
 
 public class Main {
 
-    public static void printYearsAndDays(long minutes) {
-        if (0 > minutes) System.out.println("Invalid Value");
-        long day = 60 * 24;
-        long year = 365;
-        long days = (long) minutes / day;
-        int years = (int) (days / year);
-        long remDays = (long) ((days % year));
-
-        if (minutes >= 0) {
-            System.out.println(minutes + " min = " + years + " y and " + remDays + " d");
+    public static void printEqual(int one, int two, int three) {
+        if (0 > one || 0 > two || 0 > three) {
+            System.out.println("Invalid Value");
+            return;
         }
+        if ((one == two) && (one == three) && (two == three)) {
+            System.out.println("All numbers are equal");
+        } else if ((one != two) && (one != three) && (two != three)) {
+            System.out.println("All numbers are different");
+        } else {
+            System.out.println("Neither all are equal or different");
+        }
+
+
 
     }
 
