@@ -2,21 +2,16 @@ package com.abrahambueno;
 
 public class Main {
 
-    public static void printEqual(int one, int two, int three) {
-        if (0 > one || 0 > two || 0 > three) {
-            System.out.println("Invalid Value");
-            return;
-        }
-        if ((one == two) && (one == three) && (two == three)) {
-            System.out.println("All numbers are equal");
-        } else if ((one != two) && (one != three) && (two != three)) {
-            System.out.println("All numbers are different");
+    public static boolean isCatPlaying(boolean summer, int temperature) {
+        if (summer == false) {
+            if (25 <= temperature && temperature <= 35) {
+                return true;
+            } else return false;
         } else {
-            System.out.println("Neither all are equal or different");
+            if (25 <= temperature && temperature <= 45) {
+                return true;
+            } else return false;
         }
-
-
-
     }
 
     public static void main(String[] args) {
