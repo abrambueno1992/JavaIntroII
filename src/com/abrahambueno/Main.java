@@ -2,15 +2,18 @@ package com.abrahambueno;
 
 public class Main {
 
-    public static double area(double radius) {
-        if (0 > radius) return -1.0;
-        return 3.14159 * radius * radius;
-    }
+    public static void printYearsAndDays(long minutes) {
+        if (0 > minutes) System.out.println("Invalid Value");
+        long day = 60 * 24;
+        long year = 365;
+        long days = (long) minutes / day;
+        int years = (int) (days / year);
+        long remDays = (long) ((days % year));
 
-    public static double area(double x, double y) {
-        if (0 > x || 0 > y) return -1.0;
+        if (minutes >= 0) {
+            System.out.println(minutes + " min = " + years + " y and " + remDays + " d");
+        }
 
-        return x * y;
     }
 
     public static void main(String[] args) {
